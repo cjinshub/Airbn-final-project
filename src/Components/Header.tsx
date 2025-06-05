@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import Imagelogo from "../assets/airbnb logo.png";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -8,7 +7,7 @@ import Profile from "../assets/profile.png";
 import { useNavigate } from "react-router-dom";
 import SearchInput from "../Components/SearchInput";
 
-function Header({ SearchComponent }) {
+function Header({ showSearch }) {
   const navigate = useNavigate();
 
   // openEmaillog
@@ -26,7 +25,7 @@ function Header({ SearchComponent }) {
         <div onClick={goToHome}>
           <img src={Imagelogo} alt="logo" />
         </div>
-        {SearchComponent && <SearchInput />}
+        {showSearch && <SearchInput />}
         <div className="flex gap-2 ml-5 ">
           <p
             onClick={goToHome}

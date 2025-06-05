@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import Icon1 from "../assets/Amazingviews.png";
 import Icon2 from "../assets/cain2.png";
 import Icon3 from "../assets/Beachfront.png";

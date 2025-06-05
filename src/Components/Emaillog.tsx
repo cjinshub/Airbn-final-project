@@ -1,6 +1,9 @@
 /** @format */
 
-import { useState } from "react";
+import {
+  useState,
+  type SetStateAction,
+} from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Facebook from "../assets/Bluefacebook.png";
 import Google from "../assets/Google.png";
@@ -28,10 +31,12 @@ function Emaillog() {
     setIsLoginpageVisible(false);
   };
   //email/password submit
-  const handleEmailChange = (e) =>
-    setEmail(e.target.value);
-  const handlePasswordChange = (e) =>
-    setPassword(e.target.value);
+  const handleEmailChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => setEmail(e.target.value);
+  const handlePasswordChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => setPassword(e.target.value);
 
   const handleEmail = async () => {
     setLoading(true);
@@ -114,7 +119,10 @@ function Emaillog() {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: {
+    key: string;
+    preventDefault: () => void;
+  }) => {
     if (e.key === "Enter") {
       e.preventDefault();
       showPassword
@@ -131,7 +139,7 @@ function Emaillog() {
         <div
           onClick={() => {
             handleCloseClick();
-            window.location.href = "/";
+            window.location.href = "/Open";
           }}
         >
           <CloseIcon className="hover:rounded-full hover:border-2 cursor-pointer" />

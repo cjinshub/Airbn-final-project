@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image1 from "../assets/Image1.png";
 import Image2 from "../assets/Image (2).png";
 import Image3 from "../assets/Image (3).png";

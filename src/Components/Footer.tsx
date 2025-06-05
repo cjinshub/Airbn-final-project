@@ -1,5 +1,4 @@
 /** @format */
-import React from "react";
 import Buttonflag from "../assets/button flag.png";
 import Inc from "../assets/© 2023 Airbnb, Inc..png";
 import LanguageIcon from "@mui/icons-material/Language";

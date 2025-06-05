@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import IconButton from "../assets/searchicon.png";
 import { useState } from "react";
 

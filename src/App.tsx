@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import Header from "./Components/Header";
 import Iconcards from "./Components/Iconcards";
 import Imgcards from "./Components/Imgcards";
@@ -36,7 +35,7 @@ function App() {
   return (
     <div className="px-10">
       <Router>
-        <Header SearchComponent={SearchInput} />
+        <Header showSearch={true} />
         <hr className="border-t opacity-30 px-20" />
         <Routes>
           <Route
