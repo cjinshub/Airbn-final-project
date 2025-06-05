@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="px-10">
       <Router>
-        <Header showSearch={true} />
+        <Header SearchInput={SearchInput} />
         <hr className="border-t opacity-30 px-20" />
         <Routes>
           <Route
