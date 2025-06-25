@@ -100,6 +100,7 @@ function Emaillog() {
 
       if (response.ok) {
         console.log("Password verified:", data);
+        window.location.href = "/";
       } else {
         setLoginError(
           data.message ||
@@ -139,7 +140,7 @@ function Emaillog() {
         <div
           onClick={() => {
             handleCloseClick();
-            window.location.href = "/Open";
+            window.location.href = "/";
           }}
         >
           <CloseIcon className="hover:rounded-full hover:border-2 cursor-pointer" />
@@ -201,13 +202,12 @@ function Emaillog() {
             <button
               onClick={handlePasswordLogin}
               disabled={loading}
-              className={`bg-blue-600 text-white rounded-lg h-10 w-full mt-4 hover:bg-red-500 ${
+              className={` text-black rounded-lg h-10 w-full mt-4 hover:bg-red-500 ${
                 loading
-                  ? "opacity-60 cursor-not-allowed"
-                  : ""
+                  ? " cursor-not-allowed"
+                  : "bg-red-400"
               }`}
             >
-              Login
               {loading ? "Loading..." : "Login"}
             </button>
           </>

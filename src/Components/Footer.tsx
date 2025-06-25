@@ -5,11 +5,18 @@ import LanguageIcon from "@mui/icons-material/Language";
 import FacebookIcon from "../assets/Facebook.png";
 import Twitter from "../assets/Twitter.png";
 import Instagram from "../assets/Instagram.png";
+import MapView from "./Map";
+import { useState } from "react";
 
 function Footer() {
+  const [showMap, setShowMap] = useState(false);
+
+  const handleShowMap = () => {
+    setShowMap(!showMap);
+  };
   return (
     <>
-      <div className="bg-slate-100 mt-10 translate-x-[-50px] px-8">
+      <div className="absolute bg-slate-100 mt-10">
         <article className="text-2xl ml-5 py-8 pb-5">
           Inspiration from future getaways
         </article>
@@ -224,13 +231,20 @@ function Footer() {
           </div>
         </div>
 
-        <div className="cursor-pointer bg-black text-white h-10 w-35 rounded-3xl text-center absolute z-50 mt-5 translate-x-[580px]">
-          <div className="flex gap-2 ml-5 pt-2.5">
-            Show map
-            <img src={Buttonflag} alt="flag" />
+        <div className="bg-slate-100 mt-10 translate-x-[-50px]">
+          <div
+            onClick={handleShowMap}
+            className="cursor-pointer bg-black text-white h-10 w-35 rounded-3xl text-center absolute z-50 mt-5 translate-x-[580px]"
+          >
+            <div className="flex gap-2 ml-5 pt-2.5">
+              Show map
+              <img src={Buttonflag} alt="flag" />
+            </div>
           </div>
-        </div>
 
+          {/* Conditionally render MapView */}
+          {showMap && <MapView />}
+        </div>
         <hr className="relative border-t opacity-30 mt-10" />
 
         <div className="flex mt-2 gap-120">

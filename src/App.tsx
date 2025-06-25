@@ -4,8 +4,8 @@ import Header from "./Components/Header";
 import Iconcards from "./Components/Iconcards";
 import Imgcards from "./Components/Imgcards";
 import Footer from "./Components/Footer";
-import Emaillog from "./Components/Emaillog";
-import Login from "./Components/Login";
+import Emaillog from "./Pages/Emaillog";
+import Login from "./Pages/Login";
 import SearchInput from "./Components/SearchInput";
 import {
   BrowserRouter as Router,
@@ -17,7 +17,7 @@ const HomePage = () => {
   return (
     <>
       <div>
-        <div>
+        <div className="sm:grid sm:grid-cols-1">
           <Iconcards />
         </div>
         <div>
@@ -26,6 +26,7 @@ const HomePage = () => {
         <div className="ml-26">
           <Footer />
         </div>
+        <div></div>
       </div>
     </>
   );

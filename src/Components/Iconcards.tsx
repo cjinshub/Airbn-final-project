@@ -33,14 +33,28 @@ function Iconcards() {
     Icon14,
   ];
 
+  const isVisible = (index: number) => {
+    // Icons 0,1,12,13 are visible on all screens
+    if ([0, 1, 12, 13].includes(index))
+      return "block";
+
+    // Icons 2–5 (index 2 to 5) are visible from md screens up
+    if (index >= 2 && index <= 5)
+      return "hidden md:block";
+
+    // Icons 6–11 are visible only on lg screens
+    return "hidden lg:block";
+  };
+
   return (
     <>
-      <div className="flex gap-13 border- mb-5 cursor-pointer mt-5 ml-5 h-10 w-20">
+      <div className="flex gap-16 mb-5 cursor-pointer mt-5 ml-5 h-10 w-20">
         {icons.map((icon, index) => (
           <img
             key={index}
             src={icon}
             alt={`icon-${index}`}
+            className={`${isVisible(index)} h-10 w-10`}
           />
         ))}
       </div>
